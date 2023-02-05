@@ -44,7 +44,7 @@ int main()
 	cout << "\n";
 }
 
-void DFS(int node)
+void DFS(int node) // DFS 구현
 {
 	cout << node << " ";
 	visited[node] = true;
@@ -58,7 +58,7 @@ void DFS(int node)
 	}
 }
 
-void BFS(int node)
+void BFS(int node) // BFS 구현
 {
 	queue<int> myQueue;
 	myQueue.push(node);

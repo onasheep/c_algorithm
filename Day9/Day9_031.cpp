@@ -1,0 +1,39 @@
+// 31. 배열에서 k번째 수 찾기
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+
+	long N, k;
+	cin >> N >> K;
+	long start = 1, end = k;
+	long ans = 0;
+
+
+	// 이진 탐색 수행
+	while (start <= end)
+	{
+		long middle = (start + end) / 2;
+		long cnt;
+
+		// 중앙값보다 작은 수 갯수 계산
+		for (int i = 1; i <= N; i++)
+		{
+			cnt += min(middle / i, N); // 작은 수를 카운트 하는 핵심 로직
+		}
+		if (cnt < k)
+		{
+			start = middle + 1;
+		}
+		else
+		{
+			ans = middle; // 현재 중앙값을 변수에 저장
+			end = middle - 1;
+		}
+	}
+	cout << ans << "\n";
+}
