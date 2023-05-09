@@ -6,23 +6,25 @@ using namespace std;
 
 bool compareWith(string a, string b) {
     if (a.length() == b.length())
+    {
         return a < b;
+    }
     return a.length() < b.length();
 }
 
 int main() {
     int n;
-    vector<string> vec;
+    vector<string> words;
     cin >> n;
     for (int i = 0; i < n; i++) {
         string str;
         cin >> str;
-        if (find(vec.begin(), vec.end(), str) == vec.end())
-            vec.push_back(str);
+        if (find(words.begin(), words.end(), str) == words.end())
+            words.push_back(str);
     }
-    sort(vec.begin(), vec.end(), compareWith);
+    sort(words.begin(), words.end(), compareWith);
 
-    for (int i = 0; i < vec.size(); i++) {
-        cout << vec[i] << '\n';
+    for (int i = 0; i < words.size(); i++) {
+        cout << words[i] << '\n';
     }
 }
