@@ -2,7 +2,7 @@
 using namespace std;
 
 
-int gcd(int a, int b) {
+int gcd(long long int a, long long int b) {
 	if (b == 0)
 	{
 		return a;
@@ -15,16 +15,14 @@ int gcd(int a, int b) {
 }
 
 int main() {
-	int t;
-	int a, b;
-	int lcd;
 
-	cin >> t;
-	for (int i = 0; i < t; i++) {
-		cin >> a >> b;
-		lcd = a * b / (gcd(a, b));
-		cout << lcd << "\n";
-	}
+	long long int a, b;
+	long long int lcd;
+
+	cin >> a >> b;
+	lcd = a * b / (gcd(a, b));
+	cout << lcd << "\n";
+
 
 	return 0;
 }
